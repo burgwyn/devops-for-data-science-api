@@ -1,11 +1,13 @@
 import os
 from flask import Flask, Request, Response, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
+from flask_cors import CORS
 
 UPLOAD_FOLDER = '/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask(__name__)
+CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/hello")
